@@ -31,6 +31,12 @@ namespace NerdStore.Catalogo.Domain
 
         public void Desativar() => Ativo = false;
 
+        public void AlterarCategoria(Categoria categoria)
+        {
+            Categoria = categoria;
+            CategoriaId = categoria.Id;
+        }
+
     }
 
     public class Categoria : Entity
