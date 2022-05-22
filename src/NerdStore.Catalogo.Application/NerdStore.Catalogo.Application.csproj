@@ -7,17 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\NerdStore.Catalogo.Data\NerdStore.Catalogo.Data.csproj" />
-    <ProjectReference Include="..\src\NerdStore.Catalogo.Domain\NerdStore.Catalogo.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="AutoMapper\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NerdStore.Catalogo.Domain\NerdStore.Catalogo.Domain.csproj" />
   </ItemGroup>
 
 </Project>

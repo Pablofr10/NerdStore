@@ -14,4 +14,4 @@ public class DomainToViewModelMappingProfile : Profile
             .ForMember(d => d.Profundidade, o => o.MapFrom(s => s.Dimensoes.Profundidade));
         CreateMap<Categoria, CategoriaViewModel>();
     }
-}'
+}
