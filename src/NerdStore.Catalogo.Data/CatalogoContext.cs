@@ -9,7 +9,7 @@ public class CatalogoContext : DbContext, IUnitOfWork
     public CatalogoContext(DbContextOptions<CatalogoContext> options) : base(options)
     {}
 
-    public DbSet<Produto> Produto { get; set; }
+    public DbSet<Produto> Produtos { get; set; }
     public DbSet<Categoria> Categorias { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,8 +23,19 @@ public class CatalogoContext : DbContext, IUnitOfWork
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoContext).Assembly);
     }
 
-    public Task<bool> Commit()
+    public async Task<bool> Commit()
     {
-        throw new NotImplementedException();
+        foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
+        {
+            var entryState = entry.State;
+
+            if (entryState == EntityState.Added) 
+                entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+
+            if (entryState == EntityState.Modified)
+                entry.Property("DataCadastro").IsModified = false;
+        }
+
+        return await base.SaveChangesAsync() > 0;
     }
 }
