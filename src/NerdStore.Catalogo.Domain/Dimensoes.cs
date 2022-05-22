@@ -10,9 +10,9 @@ public class Dimensoes
 
     public Dimensoes(decimal altura, decimal largura, decimal profundidade)
     {
-        Validacoes.ValidarSeMenorIgualMinino(altura, 1, "O campo Altura não pode ser igual a 0");
-        Validacoes.ValidarSeMenorIgualMinino(largura, 1, "O campo Largura não pode ser igual a 0");
-        Validacoes.ValidarSeMenorIgualMinino(profundidade, 1, "O campo Profundidade não pode ser igual a 0");
+        Validacoes.ValidarSeMenorQue(altura, 1, "O campo Altura não pode ser igual a 0");
+        Validacoes.ValidarSeMenorQue(largura, 1, "O campo Largura não pode ser igual a 0");
+        Validacoes.ValidarSeMenorQue(profundidade, 1, "O campo Profundidade não pode ser igual a 0");
 
         Altura = altura;
         Largura = largura;
