@@ -43,7 +43,7 @@ public class ProdutoRepository : IProdutoRepository
 
     public void Atualizar(Produto produto)
     {
-        _context.Produtos.Add(produto);
+        _context.Produtos.Update(produto);
     }
 
     public void Adicionar(Categoria categoria)

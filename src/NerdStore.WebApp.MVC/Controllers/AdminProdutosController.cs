@@ -31,31 +31,12 @@ public class AdminProdutosController : Controller
     public async Task<IActionResult> NovoProduto(ProdutoViewModel produtoViewModel)
     {
         if (!ModelState.IsValid) return View(await PopularCategorias(produtoViewModel));
+
         await _produtoAppService.AdicionarProduto(produtoViewModel);
+
         return RedirectToAction("Index");
     }
-    [HttpGet]
-    [Route("produtos-atualizar-estoque")]
-    public async Task<IActionResult> AtualizarEstoque(Guid id)
-    {
-        return View("Estoque", await _produtoAppService.ObterPorId(id));
-    }
 
-    [HttpPost]
-    [Route("produtos-atualizar-estoque")]
-    public async Task<IActionResult> AtualizarEstoque(Guid id, int quantidade)
-    {
-        if (quantidade > 0)
-        {
-            await _produtoAppService.ReporEstoque(id, quantidade);
-        }
-        else
-        {
-            await _produtoAppService.DebitarEstoque(id, quantidade);
-        }
-
-        return View("Index", await _produtoAppService.ObterTodos());
-    }
     [HttpGet]
     [Route("editar-produto")]
     public async Task<IActionResult> AtualizarProduto(Guid id)
@@ -100,11 +81,10 @@ public class AdminProdutosController : Controller
 
         return View("Index", await _produtoAppService.ObterTodos());
     }
+
     private async Task<ProdutoViewModel> PopularCategorias(ProdutoViewModel produto)
     {
         produto.Categorias = await _produtoAppService.ObterCategorias();
         return produto;
     }
-
-
 }
