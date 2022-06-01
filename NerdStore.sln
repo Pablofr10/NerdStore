@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Core", "src\NerdS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Vendas.Domain", "src\NerdStore.Vendas.Domain\NerdStore.Vendas.Domain.csproj", "{EFD4E663-1C06-44B0-A7F6-20790D3E7ADC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Vendas.Application", "src\NerdStore.Vendas.Application\NerdStore.Vendas.Application.csproj", "{EE09EF62-75F1-43F0-9866-6C3FC12D268C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Vendas.Data", "src\NerdStore.Vendas.Data\NerdStore.Vendas.Data.csproj", "{6519252C-3FC9-4F6B-96DC-6FEC50FA1D00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{EFD4E663-1C06-44B0-A7F6-20790D3E7ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFD4E663-1C06-44B0-A7F6-20790D3E7ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFD4E663-1C06-44B0-A7F6-20790D3E7ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE09EF62-75F1-43F0-9866-6C3FC12D268C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE09EF62-75F1-43F0-9866-6C3FC12D268C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE09EF62-75F1-43F0-9866-6C3FC12D268C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE09EF62-75F1-43F0-9866-6C3FC12D268C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6519252C-3FC9-4F6B-96DC-6FEC50FA1D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6519252C-3FC9-4F6B-96DC-6FEC50FA1D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6519252C-3FC9-4F6B-96DC-6FEC50FA1D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6519252C-3FC9-4F6B-96DC-6FEC50FA1D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +90,8 @@ Global
 		{4B0FE00E-2BB2-427A-9FD8-56AAB70B1F72} = {900870E0-7FDB-486F-A691-618761559BEC}
 		{D3B51BF1-DC04-4824-9BE8-AB3B92AEB33A} = {B0EBA3D8-4FB7-4A7F-B5E5-EE3076AEAEC0}
 		{EFD4E663-1C06-44B0-A7F6-20790D3E7ADC} = {74EE5323-7186-4023-B84D-543B03D1C29C}
+		{EE09EF62-75F1-43F0-9866-6C3FC12D268C} = {74EE5323-7186-4023-B84D-543B03D1C29C}
+		{6519252C-3FC9-4F6B-96DC-6FEC50FA1D00} = {74EE5323-7186-4023-B84D-543B03D1C29C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76786E68-F984-4740-B866-BB65FA0EC110}
