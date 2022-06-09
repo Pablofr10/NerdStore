@@ -17,6 +17,20 @@ public class PedidoCommandHandler :
     {
         if (!ValidarCommando(message)) return false;
 
+        var pedido = await _pedidoRepository.ObterPedidoRascunhoPorClienteId(message.ClienteId);
+        var pedidoItem = new PedidoItem(message.ProdutoId, message.Nome, message.Quantidade, message.ValorUnitario);
+
+        if (pedido == null)
+        {
+            pedido = Pedido.PedidoFactory.NovoPedidoRascunho(message.ClienteId);
+            pedido.AdicionarItem(pedidoItem);
+        }
+        else
+        {
+            var pedidoItemExistente = pedido.PedidoItemExistente(pedidoItem);
+            pedido.AdicionarItem(pedidoItem);
+        }
+
         return true;
     }
 
