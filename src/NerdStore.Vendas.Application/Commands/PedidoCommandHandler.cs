@@ -29,9 +29,19 @@ public class PedidoCommandHandler :
         {
             var pedidoItemExistente = pedido.PedidoItemExistente(pedidoItem);
             pedido.AdicionarItem(pedidoItem);
+
+            if (pedidoItemExistente)
+            {
+                var pedidoAtualizar = pedido.PedidoItems.FirstOrDefault(p => p.ProdutoId == pedidoItem.ProdutoId);
+                _pedidoRepository.AtualizarItem(pedidoAtualizar);
+            }
+            else
+            {
+                _pedidoRepository.AdicionarItem(pedidoItem);
+            }
         }
 
-        return true;
+        return await _pedidoRepository.UnitOfWork.Commit();
     }
 
     private bool ValidarCommando(Command message)
